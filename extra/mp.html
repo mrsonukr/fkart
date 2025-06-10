@@ -1,0 +1,39 @@
+<!-- Button for PhonePe Payment -->
+<button class="pay-link" id="payButtonPhonePe" onclick="window.location.href='<?= $upiUrl ?>'">
+  Pay ₹<span id="formattedAmount"></span>
+</button>
+
+<script>
+// JavaScript to calculate the total price dynamically
+
+// Example variables (replace with actual values)
+let totalSellPrice = 500;  // Example price
+let showPackagingCharges = true;  // Whether packaging charges should be added
+let packagingCharge = 59;  // Packaging charge amount
+
+// Function to format number with commas
+function formatNumberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// Calculate the total price
+let totalAmount = totalSellPrice + (showPackagingCharges ? packagingCharge : 0);
+
+// Set the formatted amount in the button
+document.getElementById('formattedAmount').innerText = formatNumberWithCommas(totalAmount);
+
+// Construct the UPI payment URL dynamically
+let upiId = 'merchant@upi';  // Replace with your UPI ID
+let merchantName = 'Merchant Name';  // Replace with your merchant name
+let transactionId = 'TX123456789';  // Unique transaction ID
+let currency = 'INR';  // Currency
+let websiteUrl = 'https://www.yourwebsite.com';  // Your website URL (optional)
+
+// Generate UPI payment URL
+let upiUrl = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(merchantName)}&tid=${encodeURIComponent(transactionId)}&txn=${encodeURIComponent(totalAmount)}&cu=${encodeURIComponent(currency)}&url=${encodeURIComponent(websiteUrl)}`;
+
+// Set the generated UPI URL as the button's link
+document.getElementById('payButtonPhonePe').onclick = function() {
+  window.location.href = upiUrl;
+};
+</script>

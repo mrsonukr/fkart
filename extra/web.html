@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Payment</title>
+    <link rel="stylesheet" href="pay.css">
+</head>
+
+
+<div class="dropdown-container">
+    <div onclick="toggleDropdown('dropdownContentUPI', 'dropdownArrowUPI', 'payTextUPI', this)">
+        <div class="dropdown-header">
+            <div class="left-section">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/upi.svg"
+                    alt="UPI Payment Icon">
+                <div class="text-container">
+                    <span class="main-text">UPI</span>
+                </div>
+            </div>
+            <div class="right-section">
+                <img id="dropdownArrowUPI"
+                    src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/p/img/DownArrow.svg"
+                    alt="Dropdown Arrow">
+            </div>
+        </div>
+        <div class="subtext"><span class="p-subtext" id="payTextUPI">Pay by any UPI app</span></div>
+    </div>
+    <div class="dropdown-content" id="dropdownContentUPI">
+        <!-- inside menu -->
+        <div class="upi-box">
+
+
+            <!-- PhonePe Section -->
+            <div class="select-box" onclick="selectPaymentOption('phonePe')">
+                <div class="top-side">
+                    <div class="gpay">
+                        <div class="checkbox-container">
+                            <input type="radio" name="paymentOption" id="phonePe" class="radio"
+                                onchange="togglePayButton(this)" checked>
+                            <label for="phonePe" class="checkbox-label">Phone Pe</label>
+                        </div>
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/phonepe.svg"
+                            alt="Phone Pe Logo" class="app-logo">
+                    </div>
+                    <div class="right-side" id="rightSidePhonePe">
+                        <button class="pay-link" id="payButtonPhonePe">Pay ₹193</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Paytm Section -->
+            <div class="select-box" onclick="selectPaymentOption('paytm')">
+                <div class="top-side">
+                    <div class="gpay">
+                        <div class="checkbox-container">
+                            <input type="radio" name="paymentOption" id="paytm" class="radio"
+                                onchange="togglePayButton(this)">
+                            <label for="paytm" class="checkbox-label">Paytm</label>
+                        </div>
+                        <img src="ic/paytm-icon.svg" alt="Paytm Logo" class="app-logo">
+                    </div>
+                    <div class="right-side" id="rightSidePaytm">
+                        <button class="pay-link" id="payButtonPaytm">Pay ₹193</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Google Pay Section -->
+            <div class="select-box" onclick="selectPaymentOption('googlePay')">
+                <div class="top-side">
+                    <div class="gpay">
+                        <div class="checkbox-container">
+                            <input type="radio" name="paymentOption" id="googlePay" class="radio"
+                                onchange="togglePayButton(this)">
+                            <label for="googlePay" class="checkbox-label">Add New UPI ID</label>
+                        </div>
+
+                        <a class="blue bold font12 " href="">How to find?</a>
+                    </div>
+                    <div style="width: 100%;">
+                        <div class="right-side active" id="rightSideGoogle">
+                            <div class="margin-left" id="rightSideoogle">
+                                <label for="card-number" class="gray font12">UPI ID</label>
+                                <div class="upi-container">
+                                    <input type="text" id="upiId" placeholder="Enter your UPI ID" class="upi-input" />
+                                    <button type="button" class="verify-btn" onclick="verifyUpi()">
+                                        <span class="btn-text">Verify</span>
+                                        <div class="btn-loader"></div>
+                                    </button>
+                                </div>
+                                <p id="error-message">Invalid UPI ID</p>
+                                <p id="fetch-error">Unable to fetch</p>
+                                <br>
+                                <button class="btn-submit-none">Pay 193</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- inside menu end -->
+    </div>
+</div>
+<div class="dropdown-container">
+    <div onclick="toggleDropdown('dropdownContentCard', 'dropdownArrowCard', 'payTextCard', this)">
+        <div class="dropdown-header">
+            <div class="left-section">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/card.svg"
+                    alt="Card Payment Icon">
+                <div class="text-container">
+                    <span class="main-text">Credit / Debit / ATM Card</span>
+                </div>
+            </div>
+            <div class="right-section">
+                <img id="dropdownArrowCard"
+                    src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/p/img/DownArrow.svg"
+                    alt="Dropdown Arrow">
+            </div>
+        </div>
+
+
+        <div class="subtext" id="payTextCard"><span class="p-subtext"><span class="gray colo">Add and secure cards
+                    as per RBI guidelines</span><br>5% Unlimited Cashback on Flipkart Axis
+                Bank Credit Card</span></div>
+
+    </div>
+
+    <div class="dropdown-content" id="dropdownContentCard">
+        <!-- inside menu -->
+        <div class="card-note">
+            <div>
+                <p><strong><em>Note:</em></strong> Please ensure your card can be used for online transactions.
+                    Learn more</p>
+            </div>
+        </div>
+        <div class="form-container">
+            <form id="paymentForm">
+                <div class="form-group" id="cardNumberGroup">
+                    <label for="card-number" class="form-label">Card Number</label>
+                    <div class="input-wrapper">
+                        <input id="card-number" type="text" class="input-field" placeholder="XXXX XXXX XXXX"
+                            maxlength="14">
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/p/img/dummy-card.svg"
+                            alt="Card Icon" class="input-icon">
+                    </div>
+                    <span class="error-text">Card number is required</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group" id="expiryDateGroup">
+                        <label for="expiry-date" class="form-label">Valid Thru</label>
+                        <div class="input-wrapper">
+                            <input id="expiry-date" type="text" class="input-field" placeholder="MM / YY" maxlength="7">
+                        </div>
+                        <span class="error-text">Enter valid month/year</span>
+                    </div>
+                    <div class="form-group" id="cvvGroup">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <div class="input-wrapper">
+                            <input id="cvv" type="text" class="input-field" placeholder="CVV" maxlength="3">
+                            <img style="width: 18px;"
+                                src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/help-icon-black.svg"
+                                alt="Help Icon" class="input-icon">
+                        </div>
+                        <span class="error-text">CVV required</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Pay ₹193</button>
+            </form>
+        </div><br>
+        <!-- inside menu end -->
+    </div>
+</div>
+<!-- Additional dropdowns for bank, card, wallet, and cash on delivery -->
+<div class="dropdown-container">
+    <div onclick="toggleDropdown('dropdownContentBank', 'dropdownArrowBank', 'payTextBank', this)">
+        <div class="dropdown-header">
+            <div class="left-section">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/net-banking-08092023.svg"
+                    alt="Bank Payment Icon">
+                <div class="text-container">
+                    <span class="main-text">Net Banking</span>
+                </div>
+            </div>
+            <div class="right-section">
+                <img id="dropdownArrowBank"
+                    src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/p/img/DownArrow.svg"
+                    alt="Dropdown Arrow">
+            </div>
+        </div>
+        <div class="subtext-hide"><span class="p-subtext" id="payTextBank">Pay using your wallet</span></div>
+    </div>
+    <div class="dropdown-content" id="dropdownContentBank">
+        <!-- inside menu -->
+        <div class="upi-box">
+            <!-- HDFC Bank Section -->
+            <div class="select-box" onclick="selectPaymentOption('hdfc')">
+                <div class="top-side">
+                    <div class="gpay">
+                        <div class="checkbox-container">
+                            <input type="radio" name="paymentOption" id="hdfc" class="radio"
+                                onchange="togglePayButton(this)" checked>
+                            <label for="hdfc" class="checkbox-label">HDFC Bank</label>
+                        </div>
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/banks/HDFC.svg"
+                            alt="HDFC Bank Logo" class="app-logo">
+                    </div>
+                    <div class="right-side active" id="rightSidehdfc">
+                        <button class="pay-link" id="payButtonhdfc">Pay ₹193</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <!-- ICICI Section -->
+            <div class="select-box" onclick="selectPaymentOption('icici')">
+                <div class="top-side">
+                    <div class="gpay">
+                        <div class="checkbox-container">
+                            <input type="radio" name="paymentOption" id="icici" class="radio"
+                                onchange="togglePayButton(this)">
+                            <label for="icici" class="checkbox-label">ICICI Bank</label>
+                        </div>
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/banks/ICICI.svg"
+                            alt="ICICI Bank Logo" class="app-logo">
+                    </div>
+                    <div class="right-side" id="rightSideicici">
+                        <button class="pay-link" id="payButtonicici">Pay ₹193</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <!-- SBI Section -->
+            <div class="select-box" onclick="selectPaymentOption('sbi')">
+                <div class="top-side">
+                    <div class="gpay">
+                        <div class="checkbox-container">
+                            <input type="radio" name="paymentOption" id="sbi" class="radio"
+                                onchange="togglePayButton(this)">
+                            <label for="sbi" class="checkbox-label">State Bank Of India</label>
+                        </div>
+                        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/banks/SBI.svg"
+                            alt="SBI Logo" class="app-logo">
+                    </div>
+                    <div class="right-side" id="rightSidesbi">
+                        <button class="pay-link" id="payButtonsbi">Pay ₹193</button>
+                    </div>
+                </div>
+            </div>
+            <!-- more banks -->
+            <hr>
+            <div class="select-box">
+                <div class="top-side">
+                    <div class="gpay">
+                        <div>
+                            <label for="sbi" class="blue bold all-bank">All other banks</label>
+                        </div>
+
+                    </div>
+                    <div class="right-side" id="rightSidesbi">
+                        <button class="pay-link" id="payButtonsbi">Pay ₹193</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- inside menu end -->
+    </div>
+</div>
+
+<div class="dropdown-container">
+    <div onclick="toggleDropdown('dropdownContentWallet', 'dropdownArrowWallet', 'payTextWallet', this)">
+        <div class="dropdown-header">
+            <div class="left-section">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/wallet-logo.svg"
+                    alt="Wallet Payment Icon">
+                <div class="text-container">
+                    <span class="main-text">Wallets</span>
+                </div>
+            </div>
+            <div class="right-section">
+                <img id="dropdownArrowWallet"
+                    src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/p/img/DownArrow.svg"
+                    alt="Dropdown Arrow">
+            </div>
+        </div>
+        <div class="subtext"><span class="p-subtext" id="payTextWallet"></span></div>
+    </div>
+    <div class="dropdown-content" id="dropdownContentWallet">
+        <!-- inside menu -->
+        Wallet options here
+        <!-- inside menu end -->
+    </div>
+</div>
+<div class="dropdown-container">
+    <div>
+        <div class="dropdown-header">
+            <div class="left-section">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/gift-card-logo-09082023.svg"
+                    alt="Cash on Delivery Icon">
+                <div class="text-container">
+                    <span class="main-text">Have a Flipkart Gift Card?</span>
+                </div>
+            </div>
+            <div class="right-section">
+                <span class="blue bold font12">Add</span>
+            </div>
+        </div>
+        <div class="subtext"><span class="p-subtext" id="payTextCOD"></span></div>
+    </div>
+    <div class="dropdown-content" id="dropdownContentCOD">
+
+    </div>
+</div>
+<div class="dropdown-container">
+    <div>
+        <div class="dropdown-header">
+            <div class="left-section out">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/cash-icon.svg"
+                    alt="Cash on Delivery Icon">
+                <div class="text-container">
+                    <span class="main-text">Cash on Delivery</span>
+                </div>
+            </div>
+            <div class="right-section">
+                <span class="bold font12 out">Unavailable&nbsp;</span>
+                <img id="dropdownArrowCOD"
+                    src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/help-icon-grey.svg"
+                    alt="Dropdown Arrow">
+            </div>
+        </div>
+        <div class="subtext"><span class="p-subtext" id="payTextCOD"></span></div>
+    </div>
+    <div class="dropdown-content" id="dropdownContentCOD">
+
+    </div>
+</div>
+<div class="dropdown-container">
+    <div>
+        <div class="dropdown-header">
+            <div class="left-section out">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/bnpl-icon-23082023.svg"
+                    alt="Cash on Delivery Icon">
+                <div class="text-container">
+                    <span class="main-text">Flipkart EMI</span>
+                </div>
+            </div>
+            <div class="right-section">
+                <span class="bold font12 out">Unavailable&nbsp;</span>
+                <img id="dropdownArrowCOD"
+                    src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/help-icon-grey.svg"
+                    alt="Dropdown Arrow">
+            </div>
+        </div>
+        <div class="subtext"><span class="p-subtext" id="payTextCOD"></span></div>
+    </div>
+    <div class="dropdown-content" id="dropdownContentCOD">
+
+    </div>
+</div>
+<div class="dropdown-container">
+    <div>
+        <div class="dropdown-header">
+            <div class="left-section out">
+                <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/emi-header-08092023.svg"
+                    alt="Cash on Delivery Icon">
+                <div class="text-container">
+                    <span class="main-text">EMI</span>
+                </div>
+            </div>
+            <div class="right-section">
+                <span class="bold font12 out">Unavailable&nbsp;</span>
+                <img id="dropdownArrowCOD"
+                    src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/help-icon-grey.svg"
+                    alt="Dropdown Arrow">
+            </div>
+        </div>
+        <div class="subtext"><span class="p-subtext" id="payTextCOD"></span></div>
+    </div>
+    <div class="dropdown-content" id="dropdownContentCOD">
+
+    </div>
+</div>
+<script src="pay.js"></script>

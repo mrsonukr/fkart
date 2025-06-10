@@ -1,0 +1,302 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+   
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.main-content {
+  padding: 90px 20px 20px 20px;
+}
+body {
+  min-height: 100%;
+  background: #e3f2fd;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+  margin: 0 24px;
+}
+.logo .menu-icon {
+  color: #333;
+  font-size: 24px;
+  margin-right: 14px;
+  cursor: pointer;
+}
+.logo .logo-name {
+  color: #333;
+  font-size: 22px;
+  font-weight: 500;
+}
+nav .sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 260px;
+  padding: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+nav.open .sidebar {
+  left: 0;
+}
+.sidebar .sidebar-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 16px;
+}
+.sidebar-content .list {
+  list-style: none;
+}
+.list .nav-link {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.lists .nav-link:hover {
+  background-color: #4070f4;
+}
+.nav-link .icon {
+  margin-right: 14px;
+  font-size: 20px;
+  color: #707070;
+}
+.nav-link .link {
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
+}
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+  color: #fff;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 1000vh;
+  width: 200%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
+}
+nav.open ~ .overlay {
+  opacity: 1;
+  left: 260px;
+  pointer-events: auto;
+}
+/* User Settings Container */
+.user-settings {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+padding: 10px;
+position: absolute;
+right: 10px;
+}
+
+/* Avatar Image */
+.avatar {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+object-fit: cover; /* Ensure the image maintains its aspect ratio while covering the container */
+border: 2px solid #ffffff; /* Optional border around the avatar */
+}
+
+/* Optional: Add a hover effect to show a profile dropdown or just a visual change */
+.user-settings:hover .avatar {
+border-color: #4a90e2; /* Border changes on hover to indicate focus */
+}
+/* Add your existing CSS here */
+/* Revenue Header */
+.revenue-header {
+  margin-bottom: 30px;
+}
+
+.revenue-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.revenue-header .date-range {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Account Balance Section */
+.account-balance {
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.stat-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.stat-card .amount {
+  font-size: 32px;
+  font-weight: 500;
+  color: #4caf50;
+  margin-top: 10px;
+}
+
+/* Transaction Container */
+.transaction-container {
+  background-color: #fff;
+  padding: 25px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Header for each transaction section */
+.transaction-container h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Tab buttons for Income and Withdrawal */
+.transaction-tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.transaction-tabs button {
+  flex: 1;
+  padding: 10px;
+  background-color: white;
+  border:none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.transaction-tabs button.active {
+  background-color: #4070f4;
+  color: white;
+}
+
+
+
+/* Table Styles */
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.transaction-table th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+}
+
+.transaction-table td {
+  font-size: 14px;
+}
+
+.status-completed {
+  color: #4caf50;
+}
+
+.status-pending {
+  color: #ff9800;
+}
+
+.status-completed,
+.status-pending {
+  font-weight: 500;
+}
+
+/* Container for Each Transaction */
+.transaction-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Transaction Details */
+.transaction-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: right;
+}
+
+.transaction-date,
+.transaction-source,
+.transaction-method,
+.transaction-amount,
+.transaction-status {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 20px;
+}
+
+.transaction-date {
+  color: #555;
+}
+
+.transaction-source,
+.transaction-method {
+  font-weight: 500;
+  color: #333;
+}
+
+.transaction-amount {
+  font-weight: 600;
+  color: #4070f4;
+}
+
+.transaction-status {
+  font-weight: 500;
+}
+.status-icon {
+  width: 20px; /* Adjust size */
+  height: 20px;
+  margin-right: 3px; /* Space between icon and text */
+  margin-bottom: -5px;
+}

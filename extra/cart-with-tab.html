@@ -1,0 +1,53 @@
+ <!-- PhonePe Section -->
+ <div class="select-box" onclick="selectPaymentOption('phonePe')">
+    <div class="top-side">
+        <div class="gpay">
+            <div class="checkbox-container">
+                <input type="radio" name="paymentOption" id="phonePe" class="radio"
+                    onchange="togglePayButton(this)" checked>
+                <label for="phonePe" class="checkbox-label">Phone Pe</label>
+            </div>
+            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-gringotts/images/phonepe.svg"
+                alt="Phone Pe Logo" class="app-logo">
+        </div>
+        <div class="right-side" id="rightSidePhonePe">
+           <button class="pay-link" id="payButtonPhonePe" onclick="window.location.href='phonepe://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(merchantName)}&am=${formatNumberWithCommas(totalSellPrice + (showPackagingCharges ? 59 : 0))}&tr=${encodeURIComponent(tr)}&cu=INR&mc=${encodeURIComponent(mc)}&qrMedium=04&tn=PaymenttoPRODUCTS'">Pay ₹${formatNumberWithCommas(totalSellPrice + (showPackagingCharges ? 59 : 0))}</button>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- Paytm Section -->
+<div class="select-box" onclick="selectPaymentOption('paytm')">
+    <div class="top-side">
+        <div class="gpay">
+            <div class="checkbox-container">
+                <input type="radio" name="paymentOption" id="paytm" class="radio"
+                    onchange="togglePayButton(this)">
+                <label for="paytm" class="checkbox-label">Paytm</label>
+            </div>
+            <img src="ic/paytm-icon.svg" alt="Paytm Logo" class="app-logo">
+        </div>
+        <div class="right-side" id="rightSidePaytm">
+            
+            <button class="pay-link" id="payButtonPaytm"onclick="window.location.href='paytmmp://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(merchantName)}&am=${formatNumberWithCommas(totalSellPrice + (showPackagingCharges ? 59 : 0))}&tr=${encodeURIComponent(tr)}&cu=INR&mc=${encodeURIComponent(mc)}&qrMedium=04&tn=PaymenttoPRODUCTS'">Pay ₹${formatNumberWithCommas(totalSellPrice + (showPackagingCharges ? 59 : 0))}</button>
+        </div>
+    </div>
+</div>
+<!-- gpay -->
+<div class="select-box" onclick="selectPaymentOption('g-pay')">
+    <div class="top-side">
+        <div class="gpay">
+            <div class="checkbox-container">
+                <input type="radio" name="paymentOption" id="g-pay" class="radio"
+                    onchange="togglePayButton(this)">
+                <label for="g-pay" class="checkbox-label">Paytm</label>
+            </div>
+            <img src="ic/paytm-icon.svg" alt="Paytm Logo" class="app-logo">
+        </div>
+        <div class="right-side" id="rightSidePaytm">
+            
+            <button class="pay-link" id="payButtonPaytm"onclick="window.location.href='paytmmp://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(merchantName)}&am=${formatNumberWithCommas(totalSellPrice + (showPackagingCharges ? 59 : 0))}&tr=${encodeURIComponent(tr)}&cu=INR&mc=${encodeURIComponent(mc)}&qrMedium=04&tn=PaymenttoPRODUCTS'">Pay ₹${formatNumberWithCommas(totalSellPrice + (showPackagingCharges ? 59 : 0))}</button>
+        </div>
+    </div>
+</div>

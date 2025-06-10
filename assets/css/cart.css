@@ -1,0 +1,568 @@
+* {
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f1f2f4;
+}
+
+.cartbox {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.cartlist {
+    margin-top: 3px;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+.right-side-box {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 10.2px;
+    max-width: auto;
+}
+
+.left-side-box {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 10px;
+    max-width: auto;
+
+}
+
+.image-box {
+    width: 80px;
+    height: 72px;
+    border: 1px solid #bababa;
+    border-radius: 6px;
+    overflow: hidden;
+    /* Ensure the image does not overflow */
+    position: relative;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Scale image to cover the box */
+}
+
+.select-qty {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px;
+    text-align: center;
+    max-width: 70px;
+    border: 1px solid #bababa;
+    border-radius: 3px;
+    overflow: hidden;
+    /* Ensure the image does not overflow */
+    position: relative;
+}
+
+.select-qty img {
+    height: 12px;
+    margin-left: 5px;
+    margin-bottom: -2px;
+}
+
+.product-name {
+    font-size: 14px;
+    /* Adjust font size as needed */
+    line-height: 1.2;
+    /* Adjust line height for spacing */
+    max-height: 1.2em;
+    /* Allow for 2 lines (2 * line-height) */
+    overflow: hidden;
+    /* Hide overflow text */
+    text-overflow: ellipsis;
+    /* Add ellipsis for overflow text */
+    display: -webkit-box;
+    /* Use WebKit box model for multiline */
+    -webkit-line-clamp: 1;
+    /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    /* Set box orientation */
+    white-space: normal;
+    /* Allow wrapping */
+}
+
+.size-storage {
+    font-size: small;
+    color: #989898;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+}
+
+.rating img {
+    width: 70px;
+}
+
+.rating-point {
+    margin-top: 1px;
+    color: #00923f;
+}
+
+.rating .point {
+    margin-top: 1px;
+    color: #989898;
+}
+
+.rating .total-rating {
+    font-weight: 500;
+    margin-top: 1px;
+    color: #989898;
+}
+
+.off-arrow {
+    display: flex;
+    gap: 5px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.off-arrow img {
+    width: auto;
+    height: 17px;
+    margin-top: 3px;
+}
+
+.discount {
+    color: #008C00;
+    margin-left: -3px;
+}
+
+.mrp-price {
+    color: #989898;
+    margin-left: 5px;
+    text-decoration: line-through;
+    font-size: 16px;
+    margin-top: 1px;
+}
+
+.offer {
+    margin-top: -5px;
+    color: #008C00;
+    font-size: small;
+    font-weight: 500;
+}
+
+.delivery-date {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.delivery-date img {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+}
+
+.delivery-date .exp {
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 6px;
+}
+
+.delivery-date .msg {
+    font-size: 12px;
+    font-weight: 200;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.delivery-date .point {
+    margin-top: 4px;
+    color: #3e3d3d;
+}
+
+.delivery-date .charge {
+    color: #656565;
+    font-size: 12px;
+    font-weight: 200;
+    margin-top: 5px;
+    text-decoration: line-through;
+
+}
+
+.delivery-date .free {
+    color: #008C00;
+    font-size: small;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* Add your CSS for action buttons here */
+.action-box {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 13px;
+    background-color: #ffffff;
+    border-top: solid 1px #e5e5e5;
+}
+
+.sfl-btn,
+.remove-btn {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.sfl-btn::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 170%;
+    width: 1px;
+    margin-top: -13px;
+    background-color: #e5e5e5;
+}
+
+.sfl-btn .sfl-icon,
+.remove-btn .remove-icon {
+    font-size: 15px;
+    font-weight: 500;
+    color: #707070;
+    display: inline-flex;
+    align-items: center;
+    /* Center icon and text vertically */
+    gap: 8px;
+    /* Space between icon and text */
+    justify-content: center;
+}
+
+svg {
+    margin-top: -1px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
+
+.header-1 {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background-color: #ffffff;
+    height: 50px;
+    padding: 1px 15px;
+    font-weight: 500;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: -20px;
+}
+
+.header-2 {
+    display: none;
+    /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    height: 50px;
+    padding: 1px 15px;
+    font-weight: 500;
+    font-size: 16px;
+    gap: 30px;
+    align-items: center;
+    z-index: 10;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab {
+    display: flex;
+    background-color: #ffffff;
+    padding: 1px 0;
+    font-weight: 500;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-names {
+    display: flex;
+    width: 100%;
+}
+
+.tab-names div {
+    flex: 1;
+    text-align: center;
+    padding: 9px 0;
+    cursor: pointer;
+    color: #000;
+    margin-bottom: -1px;
+
+}
+
+.tab-names div:hover {
+    color: #005bed;
+}
+
+.tab-names .active {
+    color: #005bed;
+    border-bottom: 3px solid #005bed;
+}
+
+.add-lr {
+
+    overflow: hidden;
+    border-top: #dbdbdb solid 1px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.add-lr button {
+    overflow: hidden;
+    display: flex;
+    margin-top: 20px;
+    width: auto;
+    padding: 10px 19px;
+    margin-right: 30px;
+    margin-left: -5px;
+    color: #005bed;
+    font-weight: 700;
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+}
+
+.address {
+
+    margin-left: -6px;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 4px;
+
+}
+
+.customer-name {
+    margin-left: 8px;
+}
+
+.full-add {
+    font-weight: 400;
+    margin-top: 2px;
+    font-size: 14px;
+    color: rgb(113, 116, 120);
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    overflow: hidden;
+    /* Hide overflow content */
+    text-overflow: ellipsis;
+    /* Add ellipsis (...) for truncated text */
+    display: block;
+    /* Ensure it behaves like a block element */
+    max-width: 100%;
+    /* Ensure it doesn't exceed the container width */
+}
+
+.add-box {
+    margin-bottom: 15px;
+    margin-top: 8px;
+    width: 70%;
+    /* Define width for proper layout */
+    color: #000;
+    background-color: #ffffff;
+    height: auto;
+    padding: 1px 15px;
+    font-size: 14px;
+}
+
+
+.add-type {
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #f0f0f0;
+    padding: 4px;
+    border-radius: 4px;
+    color: #717478;
+}
+
+.check-box,
+.check-box2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.check-box2 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* Ensures it stays on top */
+}
+
+.cb-mrp-price {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.cb-sell-price {
+    margin-left: 5px;
+    font-size: 18px;
+    color: #000000;
+    font-weight: 500;
+    display: flex;
+    /* Flex layout for better control */
+    align-items: center;
+}
+
+.cb-sell-price span {
+    display: inline-block;
+    margin-top: 3px;
+    width: 15px !important;
+}
+
+.cb-info-ic img {
+    margin-top: 4x;
+    /* Adjusts the vertical alignment */
+    width: 15px !important;
+    margin-left: 5px;
+    /* Adds spacing to the left */
+   
+
+}
+
+.cb-btn a {
+    display: inline-block;
+    background-color: rgb(255, 194, 0);
+    color: black;
+    padding: 13px 50px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.price-details {
+    background-color: rgb(255, 255, 255);
+    padding: 10px 15px;
+
+}
+
+h1 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 500;
+
+}
+
+.ps-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.bottom {
+    margin-bottom: 2px;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+.green {
+    color: #008C00;
+}
+
+.over-line {
+    text-decoration: line-through;
+    color: #989898;
+}
+
+.delivery-charges {
+    margin-right: 5px;
+}
+
+.zigzag-line {
+    border: dashed 1px #dbdbdb;
+    margin: 10px 0;
+    transform: scaleY(0.6);
+}
+
+.offer-text {
+    font-size: 14px;
+    padding: 16px;
+    border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
+    background-color: white;
+}
+
+.space {
+    background-color: #f1f2f4;
+}
+
+.loader-container {
+    position: fixed;
+    /* Fixes the loader to the viewport */
+
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 47%;
+    /* Optional: semi-transparent background */
+
+    justify-content: center;
+    align-items: center;
+
+    /* Ensures the loader is above all other content */
+}
+
+/* Loader styles */
+.loader {
+    border: 5px solid #f3f3f3;
+    /* Light grey */
+    border-top: 5px solid #4285f4;
+    /* Blue */
+    border-left: 5px solid #4285f4;
+    border-radius: 50%;
+    width: 40px;
+    /* Size of the loader */
+    height: 40px;
+    /* Size of the loader */
+    animation: spin 1s linear infinite;
+}
+
+/* Animation for the loader */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

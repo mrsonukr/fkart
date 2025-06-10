@@ -1,0 +1,852 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/roboto-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/roboto-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+ a {
+    text-decoration: none;
+}
+
+/* Header Styles */
+.custom-header {
+    font-size: 16px;
+    color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 3px;
+    background-color: #fff;
+    transition: background-color .3s ease-out;
+}
+.main-logo{
+    width: 111px;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.menu-button {
+    color: #fff;
+    width: 42px;
+    text-align: center;
+    position: relative;
+}
+
+.logo-link {
+    max-width: 111px;
+    padding-top: 2px;
+    position: relative;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.icon-wrapper {
+    display: inline-block;
+}
+
+.icon {
+    width: 100%;
+}
+
+.cart-count {
+    background: #d32f2f;
+    border-radius: 50%;
+    color: #fff;
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    top: -9px;
+    right: 3px;
+    font-size: 8px;
+    text-align: center;
+    line-height: 11px;
+    border: 2px solid #fff;
+}
+
+/* Search Styles */
+.custom-search-container {
+    width: 100%;
+    padding: 5px 0;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.custom-search-link.custom-search-link {
+margin: 0 10px; /* Add left and right margin of 10px */
+display: block; /* Ensures the link takes the full width */
+width: calc(100% - 20px); /* Adjust width to account for margins */
+height: 40px;
+font-size: 14px;
+color: #777;
+text-align: left;
+border-radius: 10px;
+background-color: #fff;
+position: relative;
+line-height: 40px;
+border: 0;
+outline: 0;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
+.custom-search-input {
+    width: 100%;
+    height: 38px;
+    padding-left: 36px; /* Space for the icon */
+    font-size: 14px;
+    border: 0;
+    outline: 0;
+    background-color: #f0f8ff;
+    padding-left: 40px; /* Adjust padding to make space for the image */
+}
+
+/* Style for the search icon image */
+.search-icon {
+    width: 16px; /* Size of the icon */
+    height: 16px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-search-input::-webkit-input-placeholder {
+    color: #878787;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -.2px;
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+.scroller {
+    overflow: hidden; /* Ensures no scroll is visible */
+    white-space: nowrap; /* Prevent line breaks */
+    padding: 5px 0;
+    scrollbar-width: none; /* Firefox - hides scrollbar */
+}
+
+/* Webkit browsers (Chrome, Safari, Opera) */
+.scroller::-webkit-scrollbar {
+    display: none; /* Hides scrollbar */
+}
+.scroller::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+.scroller-inner {
+    display: inline-block; /* Keep images in a single line */
+}
+.scroller a {
+    color: inherit; /* Inherit color from parent element */
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Ensure the anchor behaves like a block for the images */
+}
+
+.scroller a:hover {
+    background: none; /* Remove any background color on hover */
+}
+
+.scroller a:hover img {
+    opacity: 0.8; /* Optional: change image opacity on hover */
+}
+.scroller img {
+
+    height: 68px; /* Set a fixed height for images */
+    margin: 0; /* Space between images */
+    border-radius: 5px; /* Rounded corners for images */
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.scroller img:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+@media (min-width: 720px) {
+    .scroller img {
+        margin-left: 10px; 
+        margin-right: 10px;/* Add 10px padding for max width 720px */
+    }
+}
+
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+::-webkit-input-placeholder {
+    color: #c8c7c2;
+}
+
+.custom-search-container {
+    width: 100%;
+    padding: 5px 10px;
+    margin: auto;
+}
+
+.custom-search-link {
+    display: block; /* Ensures the link takes the full width */
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    color: #777;
+    text-align: left;
+    border-radius: 10px;
+    background-color: #fff;
+    position: relative;
+    line-height: 40px;
+    border: 0;
+    outline: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.custom-search-input {
+    width: 100%;
+    height: 38px;
+    padding-left: 36px; /* Space for the icon */
+    font-size: 14px;
+    border: 0;
+    outline: 0;
+    background-color: #f0f8ff;
+    background-image: url('/svg/search.webp'); /* Add your icon URL here */
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Position the icon */
+    background-size: 16px 16px; /* Size of the icon */
+}
+
+.custom-search-input::-webkit-input-placeholder {
+    color: #878787;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -.2px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+a,
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+select,
+span {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+body,
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    height: 100%;
+    line-height: 1.5;
+    margin: 0 auto
+}
+
+#container {
+    min-height: 80vh;
+    background-color: #fff
+}
+
+.product-message.\33 -left {
+    color: red
+}
+
+.product-message.\31 -left {
+    color: red
+}
+
+.product-message.few-left {
+    color: #ae001d;
+    padding: 4px;
+    margin-left: -4px;
+}
+
+.one-left {
+    padding: 4px 0;
+    margin-left: -4px
+}
+
+.three-left {
+    padding: 4px 0;
+    margin-left: -4px;
+}
+
+.limit-discount {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 12px;
+    color: #26a541;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    padding: 4px 5px;
+    border-radius: 2px;
+    background-color: rgba(38, 165, 65, .084)
+}
+
+.content {
+    text-align: center
+}
+
+a {
+    text-decoration: none;
+    color: #333
+}
+
+::-webkit-input-placeholder {
+    color: #c8c7c2
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: 0 0
+}
+
+::-webkit-scrollbar {
+    display: none
+}
+.rating-container{
+    max-width: 68px;
+}
+.rating-box-p {
+    display: flex;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    align-items: center
+}
+
+::-webkit-input-placeholder {
+    color: #c8c7c2
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: 0 0
+}
+
+.mrp {
+    text-decoration: line-through;
+    color: #9a9a9a;
+    margin: 0 5px
+}
+
+html {
+    height: 100%
+}
+
+::-webkit-scrollbar {
+    display: none
+}
+
+@-webkit-keyframes scaling-circle {
+
+    0%,
+    100%,
+    30%,
+    50% {
+        -webkit-transform: rotate(calc(var(--angle) * 1deg)) translate(0, calc(var(--radius) * 1px)) scale(1);
+        transform: rotate(calc(var(--angle) * 1deg)) translate(0, calc(var(--radius) * 1px)) scale(1)
+    }
+
+    40% {
+        -webkit-transform: rotate(calc(var(--angle) * 1deg)) translate(0, calc(var(--radius) * 1px)) scale(0);
+        transform: rotate(calc(var(--angle) * 1deg)) translate(0, calc(var(--radius) * 1px)) scale(0)
+    }
+}
+
+@keyframes scaling-circle {
+
+    0%,
+    100%,
+    30%,
+    50% {
+        -webkit-transform: rotate(calc(var(--angle) * 1deg)) translate(0, calc(var(--radius) * 1px)) scale(1);
+        transform: rotate(calc(var(--angle) * 1deg)) translate(0, calc(var(--radius) * 1px)) scale(1)
+    }
+
+    40% {
+        -webkit-transform: rotate(calc(var(--angle) * 1deg)) translate(0, calc(var(--radius) * 1px)) scale(0);
+        transform: rotate(calc(var(--angle) * 1deg)) translate(0, calc(var(--radius) * 1px)) scale(0)
+    }
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -.02px;
+    line-height: 1.2;
+    margin: 5px 0;
+    display: flex;
+    align-items: center
+}
+
+.product-price .discount {
+    margin-right: 5px;
+    color: #008c00;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: "Mier book"
+}
+
+.product-price .mrp {
+    margin: 0 5px;
+    font-weight: 200;
+    text-decoration-line: line-through;
+    color: #8b8ba3;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: "Mier book"
+}
+
+.product-price .price {
+    color: #353543;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.2;
+    font-family: "Mier bold";
+    margin: 0
+}
+
+.flex {
+    display: flex !important
+}
+
+.color-div h4 {
+    text-align: left;
+    color: #8b8ba3;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    font-family: Roboto, Helvetica, Arial, sans-serif !important;
+    margin: 0;
+    padding: 0 0 0 16px
+}
+
+.color-list {
+    display: flex;
+    overflow-x: scroll;
+    align-items: baseline;
+    width: 100%
+}
+
+.color-div img {
+    max-width: 60px;
+    width: auto;
+    height: unset
+}
+
+.color-div .color-name {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 700
+}
+
+.size-div h4 {
+    text-align: left;
+    font-weight: 600
+}
+
+.size-list {
+    display: flex;
+    flex-flow: wrap;
+    column-gap: 10px
+}
+
+.size-div .size-name {
+    font-size: 14px
+}
+
+.product-details {
+    width: 100%;
+    overflow: scroll;
+    padding: 8px 4px 8px 12px
+}
+
+.card {
+    --bs-border-color-translucent: rgba(0, 0, 0, .125) !important;
+    --bs-border-radius: .25rem !important
+}
+
+.product-price-list {
+    display: flex;
+    justify-content: space-between
+}
+
+.product-price-list .mrp {
+    text-decoration: none !important;
+    color: initial !important
+}
+
+.product-price-list .data {
+    font-size: 14px
+}
+
+.product-price-list.total {
+    border-top: 1px dashed #eee
+}
+
+.svg-100 {
+    padding-left: 2%
+}
+
+.svg-100 svg {
+    width: 100%
+}
+
+.svg-100 {
+    padding-left: 2%
+}
+
+.svg-100 svg {
+    width: 100%
+}
+
+.offer-img {
+    width: 100%;
+    border-radius: 6px
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0
+    }
+}
+
+.sell-price {
+    color: #353543;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0
+}
+
+.mrp-price {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.01px;
+    color: #717478;
+    text-decoration-line: line-through;
+    margin-right: 8px
+}
+
+.line-through {
+    text-decoration: line-through;
+    text-decoration-line: line-through;
+    text-decoration-thickness: initial;
+    text-decoration-style: initial;
+    text-decoration-color: initial
+}
+
+.off-percentage {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -.01px;
+    color: #008c00;
+    margin-right: 8px
+}
+
+.product-name {
+    color: #717478;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    font-family: Roboto, Helvetica, Arial, sans-serif !important;
+    letter-spacing: 0;
+    margin-right: 4px;
+    flex: 1 1 0%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-align: left
+}
+
+.rating-box {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4px;
+    padding-bottom: 4px
+}
+
+.css-175oi2r66 {
+    box-shadow: rgba(0, 0, 0, .22) 0 1px 2.22px;
+    background-color: #fff;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: #fff;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    border: 0 solid #000;
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    list-style: none;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    z-index: 0
+}
+
+
+
+.heart-fav {
+    top: 12px;
+    right: 12px;
+    position: absolute;
+    align-items: center;
+    justify-content: center
+}
+.multi-color{
+    bottom: 150px;
+    left: 12px;
+    position: absolute;
+    align-items: center;
+    justify-content: center
+}
+.multi-color img{
+    width: 50%;
+   
+}
+
+
+.product-message {
+    font-size: 12px;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 4px
+}
+
+.bank-offer,
+.lowest-price {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0 solid #000;
+    box-sizing: border-box;
+    color: #26a541 !important;
+    text-align: inherit;
+    text-decoration: none;
+    word-wrap: break-word;
+    margin-left: -4px;
+}
+
+.saver-deal {
+    padding: 4px 5px;
+    background-color: rgba(38, 165, 65, .084);
+    font-size: 12px;
+    color: #26a541;
+    font-family: "Roboto Medium", Roboto-Medium, "Droid Sans", HelveticaNeue-Medium, "Helvetica Neue Medium", sans-serif-medium;
+    font-style: normal
+}
+
+.top-discount {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 12px;
+    color: #26a541;
+    font-family: "Roboto Medium", Roboto-Medium, "Droid Sans", HelveticaNeue-Medium, "Helvetica Neue Medium", sans-serif-medium;
+    font-style: normal;
+    padding: 4px 5px;
+    border-radius: 2px;
+    background-color: rgba(38, 165, 65, .084)
+}
+
+.css-175oi2r {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0 solid #000;
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    list-style: none;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    position: relative;
+    text-decoration: none;
+    z-index: 0
+}
+
+.css-175oi2r-12 {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0 solid #000;
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: auto;
+    flex-shrink: 0;
+    list-style: none;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    position: relative;
+    text-decoration: none;
+    z-index: 0
+}
+.product-list-1 {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-flow: wrap
+}
+
+.product-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Wraps items for responsive design */
+    /* Space between product cards */
+    justify-content: space-between;
+}
+
+.product-card {
+    background-color: #fdfdfdb3;
+    padding: 2px; /* Add padding for spacing */
+    min-height: 300px; /* Ensure a consistent baseline height */
+    width: 50%; /* Two-column layout */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    border: 1px solid #cccccc2f;
+    position: relative;
+    align-items: stretch; /* Ensures cards stretch equally */
+    box-sizing: border-box;
+}
+
+
+.product-img img {
+    width: auto;
+    height: 100%
+}
+
+.product-img {
+    height: 200px;
+    background-color: #fff;
+    width: 100%;
+    position: relative;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    overflow: hidden
+}
+
+.free-delivery {
+    pointer-events: none;
+    color: #616173;
+    background: #f8f8ff;
+    padding: 4px 8px;
+    border-radius: 48px;
+    display: inline-flex;
+    color: #616173;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    font-family: Roboto, Helvetica, Arial, sans-serif !important;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    font-size: 14px
+}
+
+.card {
+    border: none !important
+}
+
+.color-box {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    border: 1px solid #ececec;
+    border-radius: 6px
+}
+
+@-webkit-keyframes dOFKuy {
+    50% {
+        stroke-dashoffset: 0
+    }
+
+    51% {
+        stroke-dasharray: 125, 0;
+        stroke-dashoffset: 137
+    }
+
+    100% {
+        stroke-dasharray: 0, 125;
+        stroke-dashoffset: 0
+    }
+}
+a {
+    color: rgba(37, 37, 37, 0.929) !important;
+}

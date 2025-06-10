@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Total Sell Price is: <span id="totalSellPrice"></span></p>
+    <p>Total Quantity of Products: <span id="totalQuantity"></span></p>
+
+    <script>
+        function CartList() {
+            let products = JSON.parse(localStorage.getItem('products')) || [];
+            let totalSellPrice = 0;
+            let totalQuantity = 0; // Initialize total quantity
+
+            // Calculate total Sell Price and total Quantity
+            products.forEach(product => {
+                totalSellPrice += product.price * product.qty; // Calculate total sell price
+                totalQuantity += product.qty; // Calculate total quantity
+            });
+
+            // Display total Sell Price and total Quantity in the respective spans
+            document.getElementById('totalSellPrice').textContent = `₹${formatNumberWithCommas(totalSellPrice)}`;
+            document.getElementById('totalQuantity').textContent = totalQuantity; // Display total quantity
+        }
+
+        function formatNumberWithCommas(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // Call CartList on page load
+        CartList();
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<div class="back-button" href="/cart.php"></div>
